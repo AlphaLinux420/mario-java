@@ -19,8 +19,9 @@ public class Game extends Canvas implements Runnable {
     private static final int MILIS_PER_SEC = 1000;
     private static final int NANOS_PER_SEC = 1000000000;
     private static final double NUM_TICKS = 60.0;
-    private static final int WINDOW_WIDTH = 1920;
-    private static final int WINDOW_HEIGHT = 1080;
+    private static final Dimension SCREEN_SIZE = Toolkit.getDefaultToolkit().getScreenSize();
+    private static final int WINDOW_WIDTH = SCREEN_SIZE.width;
+    private static final int WINDOW_HEIGHT = SCREEN_SIZE.height;
     private static final int SCREEN_WIDTH = WINDOW_WIDTH - 67;
     private static final int SCREEN_OFFSET = 16 * 3;
     // GAME VARIABLES

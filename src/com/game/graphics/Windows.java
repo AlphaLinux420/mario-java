@@ -34,6 +34,7 @@ public class Windows extends JFrame implements KeyListener {
         setTitle(title);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setExtendedState(JFrame.MAXIMIZED_BOTH);  // Setze den JFrame in den Fullscreen-Modus
+        setUndecorated(true);
         setLocationRelativeTo(null);
         setResizable(false);
         levelNames = new ArrayList<>();
@@ -54,6 +55,7 @@ public class Windows extends JFrame implements KeyListener {
         // Setze das Layout des Windows-Objekts auf BorderLayout
         setLayout(new BorderLayout());
         add(titelPanel, BorderLayout.CENTER);
+        setLocation(0, 0);
         pack();
         setVisible(true);
     }
