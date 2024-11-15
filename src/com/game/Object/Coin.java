@@ -7,21 +7,32 @@ import com.game.superMario.Game;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
-public class Coin extends GameObject{
+public class Coin extends GameObject {
 
     private final int index;
     private final BufferedImage[] sprite;
     private boolean coinhit = false;
+    private int animationFrame = 0;
+    private int animationSpeed = 8; // Adjust the speed of the animation
+    private int animationCounter = 0;
 
     public Coin(int x, int y, int width, int height, int index, int scale) {
         super(x, y, ObjectId.COIN, width, height, scale);
         this.index = index;
         Texture texture = Game.getTexture();
-        sprite = texture.getItem_1();
+        sprite = new BufferedImage[]{texture.getItem_1()[1], texture.getItem_1()[2], texture.getItem_1()[3]};
     }
+
     @Override
     public void tick() {
-
+        if (!coinhit) {
+            // Update the animation frame
+            animationCounter++;
+            if (animationCounter >= animationSpeed) {
+                animationFrame = (animationFrame + 1) % sprite.length;
+                animationCounter = 0;
+            }
+        }
     }
 
     @Override
@@ -31,7 +42,7 @@ public class Coin extends GameObject{
 
     @Override
     public void render(Graphics g) {
-            g.drawImage(sprite[index], (int) getX(), (int) getY(), (int) getWidth(), (int) getHeight(), null);
+        g.drawImage(sprite[animationFrame], (int) getX(), (int) getY(), (int) getWidth(), (int) getHeight(), null);
     }
 
     @Override
@@ -53,5 +64,4 @@ public class Coin extends GameObject{
     public Rectangle getBoundsRight() {
         return null;
     }
-
 }

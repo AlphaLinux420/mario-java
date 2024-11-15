@@ -22,7 +22,7 @@ public class Texture {
         tile_4 = new BufferedImage[TILE_1_COUNT + TILE_2_COUNT];
         pipe_1 = new BufferedImage[4];
         debris_1 = new BufferedImage[4];
-        item_1 = new BufferedImage[2];
+        item_1 = new BufferedImage[4];
         item_2 = new BufferedImage[0];
         goomba_1 = new BufferedImage[3];
         shell_1 = new BufferedImage[25];
@@ -225,7 +225,9 @@ public class Texture {
         int height = 16;
 
         item_1[0] = npm_sheet.getSubimage(x_off + width, y_off + height, width, height);
-        item_1[1] = npm_sheet.getSubimage(x_off , y_off + 5 * height, width, height);
+        item_1[1] = npm_sheet.getSubimage(x_off, y_off + 5 * height, width, height);
+        item_1[2] = npm_sheet.getSubimage(x_off + width, y_off + 5 * height + height, width, height);
+        item_1[3] = npm_sheet.getSubimage(x_off, y_off + 5 * height + height, width, height);
     }
 
     private void getStarTexture(){

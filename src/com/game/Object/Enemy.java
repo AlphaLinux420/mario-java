@@ -75,19 +75,9 @@ public class Enemy extends GameObject {
         }
         return false;
     }
-
-    public void showBoundsEnemy(Graphics g) {
-        Graphics2D g2d = (Graphics2D) g;
-        g.setColor(Color.RED);
-        g2d.draw(getBounds());
-        g2d.draw(getBoundsTop());
-        g2d.draw(getBoundsLeft());
-        g2d.draw(getBoundsRight());
-    }
     @Override
     public void render(Graphics g) {
         g.drawImage(sprite[index],(int) getX(), (int) getY(), (int) getWidth(), (int) getHeight(), null);
-        showBoundsEnemy(g);
     }
     @Override
     public Rectangle getBounds() {

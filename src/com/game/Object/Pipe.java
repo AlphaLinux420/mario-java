@@ -8,10 +8,8 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 
 public class Pipe extends GameObject {
-
     private final int index;
     private final BufferedImage[] sprite;
-
 
     public Pipe(int x, int y, int width, int height, int index, int scale) {
         super(x, y, ObjectId.PIPE, width, height, scale);
@@ -22,21 +20,11 @@ public class Pipe extends GameObject {
 
     @Override
     public void tick() {
-
     }
 
     @Override
     public void render(Graphics g) {
         g.drawImage(sprite[index], (int) getX(), (int) getY(), (int) getWidth(), (int) getHeight(), null);
-        showBoundsPipe(g);
-    }
-
-    public void showBoundsPipe(Graphics g) {
-        Graphics2D g2d = (Graphics2D) g;
-        g.setColor(Color.RED);
-        g2d.draw(getBoundsTop());
-        g2d.draw(getBoundsLeft());
-        g2d.draw(getBoundsRight());
     }
 
     public int getIndex() {

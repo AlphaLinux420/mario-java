@@ -40,7 +40,7 @@ public class Player extends GameObject {
     private Animation currAnimation;
     private boolean forward = false;
     private boolean hasJumped = false;
-    private int health = 200;
+    private int health = 2;
     private final Block block;
     private int coinCount = 0;
     private Clip coinSound;

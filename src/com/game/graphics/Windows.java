@@ -33,7 +33,7 @@ public class Windows extends JFrame implements KeyListener {
         size = new Dimension(width, height);
         setTitle(title);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        //setExtendedState(JFrame.MAXIMIZED_BOTH);  // Setze den JFrame in den Fullscreen-Modus
+        setExtendedState(JFrame.MAXIMIZED_BOTH);  // Setze den JFrame in den Fullscreen-Modus
         setLocationRelativeTo(null);
         setResizable(false);
         levelNames = new ArrayList<>();
